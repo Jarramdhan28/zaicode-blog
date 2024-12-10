@@ -16,6 +16,7 @@ export default {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
                 poppins: ["poppins", "sans-serif"],
+                jaro: ["Jaro", "sans-serif"],
                 brush: ["Nanum Brush Scrip", "cursive"],
                 ubuntu: ["ubuntu", "sans-serif"],
             },

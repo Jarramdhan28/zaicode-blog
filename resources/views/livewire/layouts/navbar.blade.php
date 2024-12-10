@@ -2,26 +2,31 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 mx-auto container items-center">
-            <h1 class="flex sm:hidden text-3xl font-semibold font-brush">Zaicode</h1>
-            <div class="hidden sm:flex space-x-4">
-                <x-nav-link wire:navigate href="{{ route('home') }}" :active="request()->routeIs('home')">
-                    Home
-                </x-nav-link>
-                <x-nav-link wire:navigate href="{{ route('article') }}" :active="request()->routeIs('article')">
-                    Articles
-                </x-nav-link>
-                <x-nav-link wire:navigate href="{{ route('category') }}" :active="request()->routeIs('category')">
-                    Categories
-                </x-nav-link>
-            </div>
+            {{-- Title Mobile --}}
+            <h1 class="flex sm:hidden text-3xl font-semibold font-jaro">
+                <a href="" class="text-3xl font-semibold">
+                    Zai<span class="text-blue-600">Blog</span>
+                </a>
+            </h1>
 
-            <div class="flex">
-                <!-- Navigation Links -->
-                <div
-                    class="hidden sm:flex font-brush left-1/2 transform -translate-x-1/2 m-auto justify-center items-center">
+            {{-- Navbar --}}
+            <div class="hidden sm:flex items-center space-x-4">
+                <div class="hidden sm:flex font-jaro transform me-4 justify-center items-center">
                     <a href="" class="text-3xl font-semibold">
-                        Zaicode
+                        Zai<span class="text-blue-600">Blog</span>
                     </a>
+                </div>
+
+                <div class="flex justify-center items-center space-x-4">
+                    <x-nav-link wire:navigate href="{{ route('home') }}" :active="request()->routeIs('home')">
+                        Home
+                    </x-nav-link>
+                    <x-nav-link wire:navigate href="{{ route('article') }}" :active="request()->routeIs('article')">
+                        Articles
+                    </x-nav-link>
+                    <x-nav-link wire:navigate href="{{ route('category') }}" :active="request()->routeIs('category')">
+                        Categories
+                    </x-nav-link>
                 </div>
             </div>
 

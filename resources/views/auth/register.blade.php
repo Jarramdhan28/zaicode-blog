@@ -1,12 +1,19 @@
 <x-guest-layout>
     <x-authentication-card>
-        <x-slot name="logo">
-           <a wire:navigate href="{{ route('home') }}" class="text-3xl font-brush text-bold">
-                Zaicode
-            </a>
-        </x-slot>
-
         <x-validation-errors class="mb-4" />
+
+        <div class="mb-4">
+            <a wire:navigate href="{{ route('home') }}">
+                <p class="font-jaro text-center text-xl">
+                    Zai<span class="text-blue-600">Blog</span>
+                </p>
+            </a>
+        </div>
+
+        <div class="mb-3 text-center">
+            <h2 class="text-3xl font-semibold">Register</h2>
+            <p class="text-sm">Enter Your Email and Password</p>
+        </div>
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
@@ -47,19 +54,16 @@
                     </x-label>
                 </div>
             @endif
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ms-4">
-                    {{ __('Register') }}
-                </x-button>
+            
+            <div class="w-full mt-4">
+                <button class="bg-blue-600 hover:bg-blue-700 w-full rounded-lg text-white py-2 transition duration-150 ease-in-out" type="submit">
+                    Register
+                </button>
             </div>
+
         </form>
 
-        <div class="text-center mt-6">
+        <div class="text-center mt-6 mb-8">
             already have an account? <a wire:navigate href="{{ route('login') }}" class="underline">Login</a>
         </div>
 

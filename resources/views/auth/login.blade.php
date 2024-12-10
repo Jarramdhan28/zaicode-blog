@@ -1,11 +1,5 @@
 <x-guest-layout>
     <x-authentication-card>
-        <x-slot name="logo">
-            <a wire:navigate href="{{ route('home') }}" class="text-3xl font-brush text-bold">
-                Zaicode
-            </a>
-        </x-slot>
-
         <x-validation-errors class="mb-4" />
 
         @session('status')
@@ -13,10 +7,22 @@
                 {{ $value }}
             </div>
         @endsession
-
+        
+        <div class="mb-4">
+            <a wire:navigate href="{{ route('home') }}">
+                <p class="font-jaro text-center text-xl">
+                    Zai<span class="text-blue-600">Blog</span>
+                </p>
+            </a>
+        </div>
+        
+        <div class="mb-3 text-center">
+            <h2 class="text-3xl font-semibold">Login</h2>
+            <p class="text-sm">Enter Your Name, Email and Password</p>
+        </div>
+        
         <form method="POST" action="{{ route('login') }}">
             @csrf
-
             <div>
                 <x-label for="email" value="{{ __('Email') }}" />
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
@@ -45,14 +51,14 @@
                 </div>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <x-button class="ms-4">
-                    {{ __('Log in') }}
-                </x-button>
+            <div class="w-full mt-4">
+                <button class="bg-blue-600 hover:bg-blue-700 w-full rounded-lg text-white py-2 transition duration-150 ease-in-out" type="submit">
+                    Login
+                </button>
             </div>
         </form>
 
-        <div class="text-center mt-6">
+        <div class="text-center mt-6 mb-8">
             don't have an account yet? <a wire:navigate href="{{ route('register') }}" class="underline">Register</a>
         </div>
     </x-authentication-card>

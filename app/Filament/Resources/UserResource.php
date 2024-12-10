@@ -70,18 +70,18 @@ class UserResource extends Resource
         })
         ->columns([
             Tables\Columns\ImageColumn::make('profile_photo_path')
-            ->label('Photo Profile')
-            ->default('https://dummyimage.com/300x300&text=zaicode')
-            ->circular()
+                ->label('Photo Profile')
+                ->default('https://dummyimage.com/300x300&text=zaicode')
+                ->circular()
                 ->extraImgAttributes(['loading' => 'lazy']),
             Tables\Columns\TextColumn::make('name')
-            ->searchable(),
+                ->searchable(),
             Tables\Columns\TextColumn::make('email')
-            ->searchable(),
+                ->searchable(),
             Tables\Columns\TextColumn::make('role')
-            ->searchable(),
+                ->searchable(),
             Tables\Columns\TextColumn::make('created_at')
-            ->date()
+                ->date()
                 ->searchable()
                 ->sortable(),
         ])
